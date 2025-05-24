@@ -13,7 +13,7 @@
     const map = L.map('map').setView([24.0, 45.0], 5);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-    fetch('/data/historical_sites.geojson')
+    fetch('/historical_sites.geojson')
       .then(res => res.json())
       .then(data => {
         L.geoJSON(data, {
