@@ -14,7 +14,7 @@ show_map = st.sidebar.checkbox("Show Map", True)
 show_table = st.sidebar.checkbox("Show Table", True)
 
 # Load data
-gdf = gpd.read_file("data/historical_sites.geojson")
+gdf = gpd.read_file("historical_sites.geojson")
 df = pd.DataFrame(gdf.drop(columns='geometry'))
 
 # Visitors Summary
@@ -37,7 +37,7 @@ st.altair_chart(chart, use_container_width=True)
 # Map
 if show_map:
     st.subheader("🗺️ Interactive Map")
-    components.html(open("static/map.html").read(), height=600)
+    components.html(open("map.html").read(), height=600)
 
 # Table
 if show_table:
